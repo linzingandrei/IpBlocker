@@ -6,6 +6,7 @@
 #pragma comment(lib, "Fwpuclnt.lib")
 #pragma comment(lib, "Ws2_32.lib")
 
+
 WCHAR* GetIpsOfWebsite(WCHAR* nodeName)
 {
     ADDRINFOW addrInfo = { 0 };
@@ -48,8 +49,9 @@ int main()
 	scanf_s("%ls", nodeName, 1024);
 
 	WCHAR* ipStr = GetIpsOfWebsite(nodeName);
+    free(nodeName);
 
-    FwpmFilterAdd();
+    //FwpmFilterAdd();
 
     WSACleanup();
 
